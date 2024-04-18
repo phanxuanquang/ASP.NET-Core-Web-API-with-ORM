@@ -19,18 +19,33 @@
 
 ## 3. Usage
 ### Step 1: Download and install
-- Download from this
-- Put into this folder
+- Download the template [**HERE**](https://github.com/phanxuanquang/ASP.NET-Core-Web-API-with-ORM/releases/download/1.0.0/ASP.NET.Core.Web.API.with.Entity.Framework.zip) (do not extract the package after downloading)
+- Find the below folder and put the template into it
+```console
+...\Document\Visual Studio 2022\Templates\ProjectTemplates
+```
+![image](https://i.imgur.com/9ufsemT.png)
+*I use Visual Studio 2022, so my folder name is "Visual Studio 2022"*.
 
 ### Step 2: Setup connection with database
-- Input information for the connection string
-- Change the type of your SQL database
-- Enable only your database type
+*In this step, I will take SQL server as the example*.
+- Input information for the connection string. You only need to input the information for the database that you want to use.
+![image](https://i.imgur.com/zRIQ0rE.png)
+- Input the type of your SQL database. Change **SqlServer** to the name of the database you want to use (SqlServer, Sqlite, or Npgsql) 
+![image](https://i.imgur.com/ooobHmy.png)
+- Install the NuGet package coresponding to your database type
+![image](https://i.imgur.com/uF5w5z7.png)
+- Enable only your database type by removing the Comment mark
+![image](https://i.imgur.com/RUDU39s.png)
 
 ### Step 3: Make it yours
+*In this step, I will take "Person" model/table as the example*.
 - Create the models and controllers as your need
-- Add your models into the database context
-- Apply my filters if needed *(reccommended)*
+![image](https://i.imgur.com/xXN8WxL.png)
+- Register your models in the database context
+![image](https://i.imgur.com/Krbaurp.png)
+- Apply one of my filters to your controller classes if needed *(reccommended)*
+![image](https://i.imgur.com/xON8Uny.png)
 
 ## 4. Note
 - My template is configured to click-and-run with SQL Server as an example
