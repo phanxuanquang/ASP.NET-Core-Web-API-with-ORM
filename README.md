@@ -9,7 +9,7 @@
 ## 2. Things that have been configured already
 - The standard format of connection string to connect with SQL databases
 - Database connection checking when starting the server
-- CORS bypassed in localhost server
+- CORS policies added to avoid blocking when calling APIs
 - The settings for HTTPS protocol, HTTP protocol, and IIS server
 - XML documentation for the APIs on Swagger UI
 - The filter to restruct the API response to avoid exception from the client side
