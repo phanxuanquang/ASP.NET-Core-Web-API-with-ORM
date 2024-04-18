@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.NET_Core_Web_API_with_Entity_Framework.Filters
 {
+    /// <summary>
+    /// Customize the message of standard HTTP status codes.
+    /// Appling this filter leads to the change for you API responses.
+    /// </summary>
     public class AutoStatusCodes : ActionFilterAttribute
     {
         public override void OnActionExecuted(ActionExecutedContext context)

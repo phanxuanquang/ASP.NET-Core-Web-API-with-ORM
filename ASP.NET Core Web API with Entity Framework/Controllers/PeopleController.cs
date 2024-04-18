@@ -13,7 +13,6 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AutoStatusCodes]
     public class PeopleController : ControllerBase
     {
         private readonly ApiDbContext _context;
@@ -76,11 +75,12 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
         {
             _context.Person.Add(person);
             await _context.SaveChangesAsync();
-
+           
             return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
 
         [HttpDelete("{id}")]
+        
         public async Task<IActionResult> DeletePerson(Guid id)
         {
             var person = await _context.Person.FindAsync(id);
