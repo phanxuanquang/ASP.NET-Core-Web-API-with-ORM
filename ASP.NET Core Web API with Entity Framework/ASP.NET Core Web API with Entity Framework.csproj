@@ -7,6 +7,17 @@
     <InvariantGlobalization>false</InvariantGlobalization>
     <RootNamespace>ASP.NET_Core_Web_API_with_Entity_Framework</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>ASP.NET Core Web API with Entity Framework</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Phan Xuan Quang</Authors>
+    <Company>github.com/phanxuanquang</Company>
+    <Description>A template to build a backend server using Entity Framework and XML Documentation, bypassing CORS policies, restructuring API response format, and customizing message for standard HTTP status codes</Description>
+    <Copyright>© 2024 / Phan Xuan Quang</Copyright>
+    <PackageProjectUrl>https://github.com/phanxuanquang/ASP.NET-Core-Web-API-with-Entity-Framework</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/phanxuanquang/ASP.NET-Core-Web-API-with-Entity-Framework</RepositoryUrl>
+    <PackageTags>template, visual studio, csharp, c#, asp.net, entity framework, sql server, sqlite, posgresql, .net, dotnet, .netcore</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,6 +28,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.4" />
@@ -35,6 +50,13 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
