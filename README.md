@@ -1,3 +1,5 @@
+![image](https://i.imgur.com/PcgT383.png)
+
 ## 1. This template is suitable for the users
 - Use C# programming language with .NET 8 for backend development
 - Use SQL databases including SQL Server, PosgreSQL, and SQLite
