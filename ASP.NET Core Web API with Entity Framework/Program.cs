@@ -1,10 +1,14 @@
-using ASP.NET_Core_Web_API_with_Entity_Framework;
+﻿using ASP.NET_Core_Web_API_with_Entity_Framework;
+using ASP.NET_Core_Web_API_with_Entity_Framework.Filters;
+using ASP.NET_Core_Web_API_with_Entity_Framework.Middlewares;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Take connection string from the 'appsettings.json' file.
 //builder.Services.AddDbContext<ApiDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("Npgsql"))); // Install the 'Npgsql' NuGet package first
@@ -44,6 +48,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+app.UseDatabaseConnectionChecker();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

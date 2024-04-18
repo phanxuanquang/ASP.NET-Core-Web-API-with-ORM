@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace ASP.NET_Core_Web_API_with_Entity_Framework.Filters
 {
@@ -16,11 +16,11 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Filters
                 (int statusCode, string desctiption) = GetStatusCode(context.HttpContext.Request.Method, objectResult.StatusCode);
                 objectResult.StatusCode = statusCode;
 
-                objectResult.Value = new 
-                { 
-                    StatusCode = statusCode, 
-                    Description = desctiption, 
-                    ResponseData = objectResult.Value 
+                objectResult.Value = new
+                {
+                    StatusCode = statusCode,
+                    Description = desctiption,
+                    ResponseData = objectResult.Value
                 };
             }
 
