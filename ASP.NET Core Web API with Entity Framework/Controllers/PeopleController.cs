@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ASP.NET_Core_Web_API_with_Entity_Framework;
+using ASP.NET_Core_Web_API_with_Entity_Framework.Filters;
+using ASP.NET_Core_Web_API_with_Entity_Framework.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ASP.NET_Core_Web_API_with_Entity_Framework;
-using ASP.NET_Core_Web_API_with_Entity_Framework.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AutoStatusCodes]
     public class PeopleController : ControllerBase
     {
         private readonly ApiDbContext _context;
@@ -21,14 +23,12 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
             _context = context;
         }
 
-        // GET: api/People
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Person>>> GetPerson()
+        public async Task<ActionResult<IEnumerable<Person>>> GetPeople()
         {
             return await _context.Person.ToListAsync();
         }
 
-        // GET: api/People/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> GetPerson(Guid id)
         {
@@ -42,8 +42,6 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
             return person;
         }
 
-        // PUT: api/People/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPerson(Guid id, Person person)
         {
@@ -73,8 +71,6 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
             return NoContent();
         }
 
-        // POST: api/People
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Person>> PostPerson(Person person)
         {
@@ -84,7 +80,6 @@ namespace ASP.NET_Core_Web_API_with_Entity_Framework.Controllers
             return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
 
-        // DELETE: api/People/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePerson(Guid id)
         {
